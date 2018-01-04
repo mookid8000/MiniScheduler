@@ -45,9 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
+    <Compile Include="Catalog\Schedule.cs" />
+    <Compile Include="Catalog\ScheduleState.cs" />
     <Compile Include="Config\IInitializable.cs" />
     <Compile Include="Config\SchedulerConfigurer.cs" />
+    <Compile Include="Config\SchedulerPersistenceConfigurer.cs" />
     <Compile Include="Identification\SchedulerId.cs" />
+    <Compile Include="Periodic\PeriodicTimerConfigurationExtensions.cs" />
+    <Compile Include="Catalog\ScheduleCatalog.cs" />
+    <Compile Include="Periodic\PeriodicCallbackSchedule.cs" />
+    <Compile Include="Persistence\InMem\InMemScheduleStore.cs" />
+    <Compile Include="Persistence\IScheduleStore.cs" />
+    <Compile Include="Persistence\SqlServer\SqlServerScheduleStore.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

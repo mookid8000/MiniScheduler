@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Configuration;
 using MiniScheduler.Config;
 
 namespace MiniScheduler
@@ -9,7 +8,7 @@ namespace MiniScheduler
     /// </summary>
     public class Scheduler : IDisposable
     {
-        public static SchedulerConfigurer Configure(string schedulerId) => new SchedulerConfigurer(schedulerId);
+        public static SchedulerPersistenceConfigurer Configure(string schedulerId) => new SchedulerPersistenceConfigurer(schedulerId);
 
         internal event Action Disposed;
 

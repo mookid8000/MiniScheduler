@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using NUnit.Framework;
+using Serilog;
 
 namespace MiniScheduler.Tests
 {
     public abstract class FixtureBase
     {
+        static FixtureBase() => Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .MinimumLevel.Verbose()
+            .CreateLogger();
+
         readonly ConcurrentStack<IDisposable> _disposables = new ConcurrentStack<IDisposable>();
 
         protected void CleanUpDisposables()
